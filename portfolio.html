@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calvin O. Setia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="acamlatedStyleSheet.css">
+    <link rel="icon" type="image/png" href="Icons/acamlated-White-Background-Circle.png">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    </style>
+    <script src="portfolioScript.js"></script>
+</head>
+
+<body onload="checkProjectFilters()" class="w3-light-grey w3-content" style="max-width:12800px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white shadow" style="z-index:3;width:300px;" id="sidebar"><br>
+    <div class="w3-container">
+        <a href="#" onclick="closeSidebar()" class="w3-hide-large w3-right w3-padding w3-hover-grey" title="close menu" style="border-radius: 10px; margin-bottom: 10px">
+            <i class="fa fa-remove"></i>
+        </a>
+        <img src="Icons/acamlated-White-Background.png" style="width:100%; border-radius: 20px" class="w3-round"><br><br>
+        <h4><b>Calvin Oktavialdy Setia</b></h4>
+    </div>
+    <div class="w3-bar-block">
+        <a onclick="goTo(document.getElementById('projects'))" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cubes fa-fw w3-margin-right"></i>PROJECTS</a>
+        <a onclick="goTo(document.getElementById('skills'))" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>SKILLS</a>
+        <a onclick="goTo(document.getElementById('programs'))" class="w3-bar-item w3-button w3-padding"><i class="fa fa-gears fa-fw w3-margin-right"></i>TOOLS & PROGRAMS</a>
+    </div>
+    <div class="w3-panel w3-large">
+        <a href="https://github.com/acamlated2" target="_blank"><i class="fa fa-github hoverScale"></i></a>
+        <a href="https://youtube.com/@acamlated3576?si=-Sd9kgZ6cMN8YRWD" target="_blank"><i class="fa fa-brands fa-youtube-play hoverScale"></i></a>
+        <a href="https://www.instagram.com/acamlated/" target="_blank"><i class="fa fa-instagram hoverScale"></i></a>
+        <a href="https://twitter.com/acamlated_" target="_blank"><i class="fa fa-twitter hoverScale"></i></a>
+        <a href="https://www.linkedin.com/in/calvin-oktavialdy-setia/" target="_blank"><i class="fa fa-linkedin hoverScale"></i></a>
+    </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+    <!-- Header -->
+    <header id="projects">
+        <a href="#"><img src="Icons/acamlated-White-Background.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="openSidebar()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>Calvin Oktavialdy Setia</b></h1>
+            <div style="padding-bottom: 16px" class="w3-section w3-bottombar">
+                <h4><b>Projects</b></h4>
+                <button id="filterButton0" onclick="selectFilter(Filters.All)" class="w3-button w3-black" style="display: none">ALL</button>
+                <div class="buttonContainer">
+                    <div class="w3-dropdown-hover w3-hover-text-grey w3-light-grey" style="margin-right: 10px; margin-bottom: 10px">
+                        <button class="w3-button">Filters:  <i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-bar-block w3-border" style="min-width: 200px">
+                            <button id="filterButton1" onclick="selectFilter(Filters.Unity)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/unity-svgrepo-com.svg" style="margin-right: 10px">Unity</button>
+                            <button id="filterButton2" onclick="selectFilter(Filters.Unreal)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/unreal-engine-svgrepo-com.svg" style="margin-right: 10px">Unreal Engine</button>
+                            <button id="filterButton3" onclick="selectFilter(Filters.Personal)" class="w3-button w3-white w3-bar-item">
+                                <i class="fa fa-user fa-fw" style="margin-right: 12px; margin-left: 3px"></i>Personal Projects</button>
+                            <button id="filterButton4" onclick="selectFilter(Filters.University)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/school-solid.svg" style="margin-right: 10px">University Projects</button>
+                            <button id="filterButton5" onclick="selectFilter(Filters.CSharp)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/c-sharp-c.svg" style="margin-right: 10px">C#</button>
+                            <button id="filterButton6" onclick="selectFilter(Filters.CPlusPlus)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/ISO_C++_Logo.svg" style="margin-right: 10px">C++</button>
+                            <button id="filterButton7" onclick="selectFilter(Filters.Python)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/Python-logo-notext.svg" style="margin-right: 10px">Python</button>
+                            <button id="filterButton8" onclick="selectFilter(Filters.JavaScript)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/javascript-logo-svgrepo-com.svg" style="margin-right: 10px">JavaScript</button>
+                            <button id="filterButton9" onclick="selectFilter(Filters.VR)" class="w3-button w3-white w3-bar-item">
+                                <img width="24" height="24" src="Icons/vr-cardboard-solid.svg" style="margin-right: 10px">VR</button>
+                        </div>
+                    </div>
+                    <button id="filterButtonClose1" onclick="selectFilter(Filters.Unity)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/unity-svgrepo-com.svg" style="margin-right: 5px">
+                        Unity  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose2" onclick="selectFilter(Filters.Unreal)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/unreal-engine-svgrepo-com.svg" style="margin-right: 5px">
+                        Unreal Engine  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose3" onclick="selectFilter(Filters.Personal)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><i class="fa fa-user fa-fw" style="margin-right: 5px; margin-left: 3px"></i>
+                        Personal Projects  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose4" onclick="selectFilter(Filters.University)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/school-solid.svg" style="margin-right: 5px">
+                        University Projects  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose5" onclick="selectFilter(Filters.CSharp)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/c-sharp-c.svg" style="margin-right: 5px">
+                        C#  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose6" onclick="selectFilter(Filters.CPlusPlus)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/ISO_C++_Logo.svg" style="margin-right: 5px">
+                        C++  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose7" onclick="selectFilter(Filters.Python)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/Python-logo-notext.svg" style="margin-right: 5px">
+                        Python  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose8" onclick="selectFilter(Filters.JavaScript)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/javascript-logo-svgrepo-com.svg" style="margin-right: 5px">
+                        JavaScript  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                    <button id="filterButtonClose9" onclick="selectFilter(Filters.VR)" class="w3-btn w3-white w3-hover-light-grey w3-margin-right roundButton"
+                            style="display: none; margin-bottom: 10px"><img width="24" height="24" src="Icons/vr-cardboard-solid.svg" style="margin-right: 5px">
+                        VR  <img width="24" height="24" src="Icons/xmark-solid.svg"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Grid -->
+    <div class="w3-row-padding">
+        <div id="project0" onclick="openProjectDetails(document.getElementById('project0Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class4 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Project ZipZap.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Project ZipZap</b></p>
+                <p class="shortText">Project ZipZap is a single-player, isometric, movement focused game where the player uses different
+                    dash abilities to fight groups of enemies, and to traverse the environment, with the ability to chain
+                    different dashes together to cause unique interactions.</p>
+            </div>
+        </div>
+
+        <div id="project1" onclick="openProjectDetails(document.getElementById('project1Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class4 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Laze.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Laze</b></p>
+                <p class="shortText">Laze is a 2D reverse bullet hell game where the player gets punished by doing actions,
+                    forcing them to strategise their actions and behaviours differently.</p>
+            </div>
+        </div>
+
+        <div id="project2" onclick="openProjectDetails(document.getElementById('project2Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class4 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Defend.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Defend</b></p>
+                <p class="shortText">Defend is a 3D tower defense game made to showcase how an AI could help players to make
+                    decisions in the game. In this game, players can press a single button and ask the AI for suggestions.
+                    The AI will then give suggestions based on various aspects of the game. </p>
+            </div>
+        </div>
+
+        <div id="project3" onclick="openProjectDetails(document.getElementById('project3Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class4 class5 class9">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Medea.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Medea</b></p>
+                <p class="shortText">Medea is a VR game based on the classical play "Medea". In this game, the player becomes
+                    a godly being and interacts with the scene to help get Medea towards a designated location and progress
+                    through the story. </p>
+            </div>
+        </div>
+
+        <div id="project4" onclick="openProjectDetails(document.getElementById('project4Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Messy Theater.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Messy Theater</b></p>
+                <p class="shortText">Messy Theater is a local multiplayer game where players have to make a king laugh by
+                    interacting with each other or objects in the scene.</p>
+            </div>
+        </div>
+
+        <div id="project5" onclick="openProjectDetails(document.getElementById('project5Modal'))" style="display: block; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Jump.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Jump</b></p>
+                <p class="shortText">Jump is a 2D platformer game where players have to jump up platforms as high
+                    as they can while avoiding enemies.</p>
+            </div>
+        </div>
+
+        <div id="project6" onclick="openProjectDetails(document.getElementById('project6Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class3 class8">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/acamlated.com.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>acamlated.com</b></p>
+                <p class="shortText">acamlated.com is my portfolio website, used to showcase my various projects. To display
+                    my projects, some features are made in the website. The features are designed to help readers to navigate
+                    through the website.</p>
+            </div>
+        </div>
+
+        <div id="project7" onclick="openProjectDetails(document.getElementById('project7Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Tenants.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Tenants</b></p>
+                <p class="shortText">Tenants is a 2D point and click game where players work as a security guard, and have
+                    to distinguish between real tenants of an apartment and their doppelgangers trying to get in. </p>
+            </div>
+        </div>
+
+        <div id="project8" onclick="openProjectDetails(document.getElementById('project8Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Idle Idling.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Idle Idling</b></p>
+                <p class="shortText">Idle Idling is a game where the player is supposed to stay in the game for as long as
+                    possible. The player will earn points as they are idle, and they can use the points to buy upgrades to
+                    help get more points. </p>
+            </div>
+        </div>
+
+        <div id="project9" onclick="openProjectDetails(document.getElementById('project9Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay  class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Pacman.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Mogu Mogu</b></p>
+                <p class="shortText">Mogu Mogu is a 2D game that is based off of <i>Pacman</i>. Players can traverse
+                    through the map and collect as much pellets as possible while trying to avoid the ghost. </p>
+            </div>
+        </div>
+
+        <div id="project10" onclick="openProjectDetails(document.getElementById('project10Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay  class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Chatroom.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Chatroom</b></p>
+                <p class="shortText">Chatroom is a project to showcase how two instances of the same program can do different
+                    things and communicate with each other. The programs can talk to each other and can even play rock paper
+                    scissors. </p>
+            </div>
+        </div>
+
+        <div id="project11" onclick="openProjectDetails(document.getElementById('project11Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay  class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Pong.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Pong</b></p>
+                <p class="shortText">Pong is my attempt to recreate the Pong game with additional features and implementations.
+                    In this project, I've added the ability to shoot projectiles to hinder enemy's movements, speed boosts
+                    to help player reach more distance in a short time, and a store for the players to purchase different
+                    paddles for them to use. </p>
+            </div>
+        </div>
+
+        <div id="project12" onclick="openProjectDetails(document.getElementById('project12Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class2 class4 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Race.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Race</b></p>
+                <p class="shortText">Race is a project to compare Unreal Engine 5 and Unity from the development perspective.
+                    This project compares the ease of use of each engine, how each engine handles objects in the game, and
+                    to find my personal preference between the two. </p>
+            </div>
+        </div>
+
+        <div id="project13" onclick="openProjectDetails(document.getElementById('project13Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Typing.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Typing</b></p>
+                <p class="shortText">Typing is a 2D game where players have to type out randomly generated words correctly.
+                    The words are set in a list and the players can use their keyboard to type out as fast as they can. If
+                    the player pressed a wrong key, the characters wouldn't show on the screen. </p>
+            </div>
+        </div>
+
+        <div id="project14" onclick="openProjectDetails(document.getElementById('project14Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Deflect.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Deflect</b></p>
+                <p class="shortText">Deflect is a 2D bullet hell game where the player can only attack enemies with the
+                    enemy's own attacks by deflecting them. The players have to time their deflection or they will get damaged
+                    by the bullets they're trying to deflect. </p>
+            </div>
+        </div>
+
+        <div id="project15" onclick="openProjectDetails(document.getElementById('project15Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class3 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Fall.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Fall</b></p>
+                <p class="shortText">Fall is a 2D game where players have to fall while avoiding hitting obstacles in the way.
+                    Players fall at a constant rate and obstacles spawn randomly as they fall. If the player hits any of the
+                    obstacles, the player will lose and the game will be reset. </p>
+            </div>
+        </div>
+
+        <div id="project16" onclick="openProjectDetails(document.getElementById('project16Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class1 class4 class5">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/The Train.jpg">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>The Train</b></p>
+                <p class="shortText">The Train is a 2D mobile game where players have to use a train to traverse the map,
+                    defending and collecting survivors along the way in a post apocalyptic setting. The world has gone to an
+                    apocalypse and the only way to survive is by escaping from the planet with a rocket on the other side of
+                    the continent. Use the train to go to the rocket with as many survivors as possible. </p>
+            </div>
+        </div>
+
+        <div id="project17" onclick="openProjectDetails(document.getElementById('project17Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Space Invaders.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Space Invaders</b></p>
+                <p class="shortText">Space Invaders is a university project where I try to recreate the <i>Space Invaders</i>
+                    arcade game. In this game, a grid of enemies is spawned on the scene, and the player can shoot them down.
+                    The enemies move left and right in various ways, including moving in a sine wave. </p>
+            </div>
+        </div>
+
+        <div id="project18" onclick="openProjectDetails(document.getElementById('project18Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Breakout.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Breakout</b></p>
+                <p class="shortText">Breakout is a university project where I try to recreate <i>Breakout</i> by Atari.
+                    In this project, the player can move the paddle around and try to bounce the ball to break the grid of
+                    bricks laid out in the scene. The players can also collect gems that are occasionally dropped to further
+                    increase their points. </p>
+            </div>
+        </div>
+
+        <div id="project19" onclick="openProjectDetails(document.getElementById('project19Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class4 class6">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Project Escape.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Project: Escape</b></p>
+                <p class="shortText">Project: Escape is a 2D multiplayer game where one player is an escapee and has to
+                    hide and escape from the guard, and another player acts as a guard trying to catch the other player out
+                    in the grid maze map. </p>
+            </div>
+        </div>
+
+        <div id="project20" onclick="openProjectDetails(document.getElementById('project20Modal'))" style="display: none; border-radius: 15px"
+             class="w3-third w3-container acamlatedMarginBottom w3-hover-opacity clickable project shouldDisplay class3 class8">
+            <div class="acamlatedScaleImg" style="border-radius: 15px 15px 0 0">
+                <img src="Photos/Budget Tracker Assistant.png">
+            </div>
+            <div class="w3-container w3-white shortTextBox" style="border-radius: 0 0 15px 15px">
+                <p><b>Budget Tracker Assistant</b></p>
+                <p class="shortText">Budget Tracker Assistant is a personal project of mine where i make a program to reduce
+                    the repetitiveness of my budget tracking activity. Everytime I spend money on something, I note it down
+                    on a <i>Google Sheets</i> document. This helps me analyse my spending which helps me better plan my future
+                    spending. This project is made to reduce the time doing my budget tracking by automating some of the repetitive
+                    parts. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="w3-container">
+        <div class="w3-center w3-padding-16 w3-bottombar">
+            <div class="w3-bar roundButton">
+                <a onclick="changePage(0)" class="w3-bar-item w3-white w3-button pageArrows"><b>«</b></a>
+                <a id="page0Button" onclick="changePage(0)" class="w3-bar-item w3-button grayButton"><b>1</b></a>
+                <a id="page1Button" onclick="changePage(1)" class="w3-bar-item w3-white w3-button"><b>2</b></a>
+                <a id="page2Button" onclick="changePage(2)" class="w3-bar-item w3-white w3-button"><b>3</b></a>
+                <a id="page3Button" onclick="changePage(3)" class="w3-bar-item w3-white w3-button"><b>4</b></a>
+                <a onclick="goToLastPage()" class="w3-bar-item w3-white w3-button pageArrows"><b>»</b></a>
+                <a id="noProjectButton" onclick="selectFilter(Filters.All)" style="display: none" class="w3-bar-item w3-white w3-button">
+                    No projects found. Consider changing some filters or click <b>here</b>.</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Tools & Programs-->
+    <div class="w3-container">
+        <h4 id="programs"><b> Tools & Programs</b></h4>
+        <div class="w3-row-padding">
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                href="https://unity.com/" target="_blank">
+                    <img width="24" height="24" src="Icons/unity-svgrepo-com.svg" style="margin-right: 10px">Unity</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                href="https://www.unrealengine.com/" target="_blank">
+                    <img width="24" height="24" src="Icons/unreal-engine-svgrepo-com.svg" style="margin-right: 10px">Unreal Engine 5</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.sfml-dev.org/" target="_blank">
+                    <img width="24" height="24" src="Icons/SFML_Logo.svg" style="margin-right: 10px">SFML</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://developer.android.com/studio" target="_blank">
+                    <img width="24" height="24" src="Icons/android-studio-icon.svg" style="margin-right: 10px">Android Studio</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.jetbrains.com/clion/" target="_blank">
+                    <img width="24" height="24" src="Icons/Clion.svg" style="margin-right: 10px">CLion</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.jetbrains.com/rider/" target="_blank">
+                    <img width="24" height="24" src="Icons/JetBrains_Rider_Icon.svg" style="margin-right: 10px">Rider</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.jetbrains.com/webstorm/" target="_blank">
+                    <img width="24" height="24" src="Icons/WebStorm_Icon.svg" style="margin-right: 10px">WebStorm</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.jetbrains.com/pycharm/" target="_blank">
+                    <img width="24" height="24" src="Icons/PyCharm_Icon.svg" style="margin-right: 10px">PyCharm</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.clipstudio.net/" target="_blank">
+                    <img width="24" height="24" src="Icons/icons8-clip-studio-paint.svg" style="margin-right: 10px">Clip Studio Paint</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://ephtracy.github.io/" target="_blank">
+                    <img width="24" height="24" src="Icons/MagicaVoxel.png" style="margin-right: 10px">MagicaVoxel</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.adobe.com/id_en/products/photoshop.html" target="_blank">
+                    <img width="24" height="24" src="Icons/ps_appicon.svg" style="margin-right: 10px">Adobe Photoshop</a>
+            </div>
+            <div class="w3-quarter" style="margin-bottom: 10px">
+                <a class="w3-btn w3-white w3-hover-light-grey roundButton" style="font-weight:900; min-width:220px"
+                   href="https://www.adobe.com/id_en/products/illustrator.html" target="_blank">
+                    <img width="24" height="24" src="Icons/Adobe_Illustrator_CC_icon.svg" style="margin-right: 10px">Adobe Illustrator</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin: auto; text-align: center" class="w3-container w3-dark-grey">
+        <div>
+            <p><i class="fa fa-link fa-fw"></i> CONNECT TO ME</p>
+            <a href="https://github.com/acamlated2" target="_blank"><i class="fa fa-github hoverScale"></i></a>
+            <a href="https://youtube.com/@acamlated3576?si=-Sd9kgZ6cMN8YRWD" target="_blank"><i class="fa fa-brands fa-youtube-play hoverScale"></i></a>
+            <a href="https://www.instagram.com/acamlated/" target="_blank"><i class="fa fa-instagram hoverScale"></i></a>
+            <a href="https://twitter.com/acamlated_" target="_blank"><i class="fa fa-twitter hoverScale"></i></a>
+            <a href="https://www.linkedin.com/in/calvin-oktavialdy-setia/" target="_blank"><i class="fa fa-linkedin hoverScale"></i></a>
+        </div>
+    </footer>
+    <!-- End page content -->
+</div>
+
+<!-- Menu Modal -->
+<div>
+    <div id="project0Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Project ZipZap
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/129WlZOuI6k?si=8SE37iYpOYDnMXr2"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+
+                </div>
+                <iframe class="steam" src="https://store.steampowered.com/widget/3093600/" frameborder="0" width="646" height="190"></iframe>
+                <p>Project ZipZap is a single-player, isometric, movement focused game where the player uses different
+                    dash abilities to fight groups of enemies, and to traverse the environment, with the ability to chain
+                    different dashes together to cause unique interactions.</p>
+                <p>This game is made as a university project with 10 other people, collaborating together as a studio to
+                    create a full, ready to release game within the time span of one year.</p>
+                <p>We decided to split the task by their aspects from the game, and assign each person to an aspect of the
+                    game. This allows each of us to fully understand an aspect of the game and reduce the time of trying to
+                    understand someone else's work for the task assigned to us.</p>
+                <p> This game has been shortlisted on TIGA's 2024 education game of the year award, and Aesthetica Short Film
+                    Festival's 2024 game of the year award. </p>
+                <h4>Role</h4>
+                <p>In this project, I mainly took the lead on designing and implementing the enemy encounters. This included:</p>
+                <h6>Enemy Design</h6>
+                <p>- Created variety of enemy types, each with unique behaviours. <br>
+                    - Defined enemy stats and abilities, while ensuring a balanced and engaging challenge for players. <br>
+                    - Managed and made sure that all enemies, both in visual and technical design fits within the theme of the game. <br>
+                    - Designed the AI of each enemy that adapts with changes of conditions in the arena. Giving the enemies interaction between each other.</p>
+                <h6>Arena Design</h6>
+                <p>- Created an arena template that can easily be used to turn parts of the levels designed by the level design team to a working arena. <br>
+                    - Placed enemies and consumables strategically within levels to create a sense of progression and challenge. <br>
+                    - Considered factors like level flow, player visibility, and cover when designing enemy placements.</p>
+                <h6>Impact & Achievements</h6>
+                <p>Some accomplishment I've achieved with the systems I've implemented according to our playtests: <br>
+                    - Increased player engagement by balancing arenas, keeping game flow, and controlling arena difficulty level. <br>
+                    - Improved player's retention by creating a satisfying challenge curve. Shown by player's willingness to keep trying when they failed a level multiple times. <br>
+                    - Created enemy types that are memorable and easily distinguishable from each other.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project1Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Laze
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dk-JLwPQKqg?si=F5ejzAttaMOr5MoR"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Laze is a 2D reverse bullet hell game where the player gets punished by doing actions, forcing them to
+                    strategise their actions and behaviours differently.</p>
+                <p>This project is in part of my dissertation project in university, of proposing a way to help jump start
+                    the development process of enemy AIs in Unity. The project includes a template of a base enemy prefab,
+                    a behaviour tree to help visualise the AI's behaviour flow, and object pools to help reduce the load of
+                    spawning and despawning enemies.</p>
+                <h4>Enemies</h4>
+                <p>Examples of enemies made with the system:<br>
+                    <b>- Normal Melee Enemy</b><br>
+                    Serving as the most basic enemy type, this type of enemy chases the player and deals damage in melee range. <br>
+                    <b>- Ranged Enemy</b><br>
+                    The ranged enemy shoots projectiles to make up for the normal enemy's lack of range. The enemy would
+                    keep at a distance from the player, forcing the player to use different strategy to fight against them. <br>
+                    <b>- Shielded Enemy</b><br>
+                    Having a big shield that rotates around them, the shielded enemies stand in the front lines and protect
+                    other enemies from ranged attacks. When their shield is broken, they will chase the player and does melee
+                    attacks. <br>
+                    <b>- Bomber Enemy</b><br>
+                    The bomber enemy shoots exploding projectiles from afar, damaging anything in its range. When they run out
+                    of exploding projectiles, they run towards the player and explode to multiple exploding projectiles.
+                </p>
+                <h4>Enemy Interactions</h4>
+                <p>To make enemies' behaviour less predictable, interactions between enemies are made. The interactions are
+                    as follows:<br>
+                    <b> - Ranged & Shielded Enemy Interactions</b><br>
+                    Shielded enemies will stay within a distance away from the player. Ranged enemies will look for a
+                    shielded enemy that still has their shield, and stands behind them, hiding from the player. If the
+                    shielded enemy is defeated, the ranged enemy will look for another shielded enemy.<br>
+                    <b> - Bomber Enemy Interaction</b>
+                    As bomber enemy's projectile can damage other enemies, all enemies will try to avoid the projectiles.
+                    If an exploding projectile gets too close to an enemy, the enemy will calculate a path away from the projectiles.
+                </p>
+                <a href="https://github.com/acamlated2/Laze" target="_blank" class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom roundButton">
+                    Check Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project2Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Defend
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mMIYOAeWzuU?si=_3ThWeIiuKmfGQff"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Defend is a 3D tower defense game made to showcase how an AI could help players to make
+                    decisions in the game. In this game, players can press a single button and ask the AI for suggestions.
+                    The AI will then give suggestions based on various aspects of the game. </p>
+                <p>This project is in part of a project in my university, of proposing a way for AI to assist players in a game
+                    as a sub commander. In this project, the player can request the AI to view of the current state of the game,
+                    and the AI will give the player suggestions of what actions could benefit the player. </p>
+                <p>The player can freely control how the AI behaves by using sliders. Each slider controls one aspect of the
+                    game the AI use as considerations. </p>
+                <h4>AI Considerations</h4>
+                <p><b> - Damage Type</b><br>
+                    The enemies in this game have three types of defensive stats. Each stat can be effectively damaged by a
+                    specific damage type. When the player asks for the AI's suggestions, the AI will take all the enemies
+                    currently in the scene, and sum up all their defensive stats. The AI will then suggest a damage type that
+                    is most suitable to deal damage to the defensive stat tha enemy have most. <br>
+                    <b>- Platform</b><br>
+                    In this game, the player can place towers on tiles of varying height. The higher the towers are placed,
+                    the more range they gain. The AI will see which tile would benefit most by placing a platform, and creates
+                    a projected price of placing a platform, and a tower. The AI will then compare the projected price and
+                    check whether it is sensible to buy a platform compared to just buying a tower. <br>
+                    <b>- Upgrades</b><br>
+                    Each tower can be upgraded to increase any of their damage type. The AI will take the suggested damage type
+                    and creates a projected price of buying an upgrade. It will then decide whether to buy an upgrade by
+                    comparing the projected price to buying a new tower. <br>
+                    <b>- Tower Placement</b><br>
+                    If all the other considerations fail, the AI then knows that buying a new tower is the best option. The AI
+                    then checks all tiles on the map, and finds the best tile to place a tower on based on its coverage of
+                    the map.
+                </p>
+                <a href="https://github.com/acamlated2/Defend" target="_blank" class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom roundButton">
+                    Check Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project3Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Medea
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1HOwyeNFCFs?si=huPbt4wQGWLOgKOA"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Medea is a VR game based on the classical play "Medea". In this game, the player becomes
+                    a godly being and interacts with the scene to help get Medea towards a designated location and progress
+                    through the story. </p>
+                <p>This project is in part of a project in my university, of proposing a way to use games technologies to
+                    help enhance the delivery of a classical play. In this game, the player can interact with objects scattered
+                    around the scene to lead Medea towards the designated point. Several decisions are made to make the player feel
+                    as if they are a god, such as the camera positions, and the interactions the player can do. </p>
+                <p>This project uses VR to enhance the immersiveness of the story being told. Players can interact with objects
+                    in the environment, making them feel more as if they are actually in the scene with the characters. </p>
+                <h4>Gameplay</h4>
+                <p><b> - Pebbles</b><br>
+                    Players can pick up pebbles and throw them. If Medea can see the pebble hitting the ground, Medea will
+                    approach the pebble. After a set amount of time, Medea will go back to the latest checkpoint. <br>
+                    <b> - Vases</b><br>
+                    The vases can be pulled towards the player using the player's controller movement, similar to how
+                    <i>Half-Life: Alyx</i> pulls object towards the player. As the vase hits the ground, the vase will make
+                    a sound that attracts Medea towards its position. <br>
+                </p>
+                <a href="https://github.com/acamlated2/Drama---Unity" target="_blank" class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom roundButton">
+                    Check Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project4Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Messy Theater
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gpZnEO6w_-I?si=oPvl-LK9W4SphAbr"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Messy Theater is a local multiplayer game where players have to make a king laugh by interacting with each
+                    other or objects in the scene. </p>
+                <p>This project was made with a 4-person team for the 2024 Global Game Jam. In the project, my role was to
+                    make and spawn the objects players could interact with.</p>
+                <p>In this game, players can interact with each other by picking objects or each other, and throwing them. They
+                    can also interact with objects in the scene like the cannon. </p>
+                <h4>Objects</h4>
+                <p><b> - Tomatoes</b><br>
+                    Every so often, tomatoes will get thrown towards the players. If a player gets hit by the tomatoes, the
+                    laugh meter will fill up. Every time a tomato spawns, there is chance for it to be an exploding tomato,
+                    throwing objects around on impact and filling the laugh meter for an extra amount. <br>
+                    <b> - Hammer</b><br>
+                    Every set amount of time, a swinging hammer will be lowered from the ceiling. If a player gets hit by the
+                    hammer, they will be thrown across the room, filling the laugh meter. <br>
+                    <b> - Blocks</b><br>
+                    Every couple of seconds, there is a chance for the ground to shoot upwards, throwing players in the air,
+                    and filling the laugh meter. <br>
+                </p>
+                <a href="https://globalgamejam.org/games/2024/messy-theatre-7" target="_blank" class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom roundButton">
+                    <i class="fa fa-download w3-margin-right"></i>Download</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project5Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Jump
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TsUEIMMG2k4?si=JgqN065SbQTtfRov"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Jump is a 2D platformer game where players have to jump up platforms as high as they can while avoiding enemies.</p>
+                <p>Made in C++ using SFML, this game was made for a university project. In this game, players can climb platforms
+                    where some of them are occupied by enemies. They can also be filled with health items to help players to
+                    traverse through the platforms. </p>
+                <p>In this game, players can interact with each other by picking objects or each other, and throwing them. They
+                    can also interact with objects in the scene like the cannon. </p>
+                <h4>Objects in the Game</h4>
+                <p><b> - Platforms</b><br>
+                    Taking inspirations from <i>Doodle jump</i>, the platforms in this game are infinitely and randomly generated.
+                    The platforms are instantiated at the beginning, each spawned at a random position relative to the previous
+                    platform, preventing the platforms to be unreachable by the player. <br>
+                    To prevent lag in the game, the game would only instantiate a set amount of platforms. Once the player reaches
+                    a certain height above the platform, the platform would then be moved towards the top to be a new platform. <br>
+                    <b> - Enemies</b><br>
+                    Everytime a platform is reset, there is a chance for it to be spawned with an enemy. If the player touches
+                    the enemy, they will get hurt. The player can throw projectiles towards the enemy to remove them from the
+                    platform. <br>
+                    <b> - Hearts</b><br>
+                    When a platform is reset, there is also a chance for it to have a heart on it. Hearts heal the player by
+                    one health. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project6Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>acamlated.com
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>acamlated.com is my portfolio website, used to showcase my various projects. To display my projects, some
+                    features are made in the website. The features are designed to help readers to navigate through the website.</p>
+                <h4>Features</h4>
+                <p><b> - Filters</b><br>
+                    To help readers navigate through the various projects, filter buttons are made for the page. each project
+                    is assigned tags that it is associated with. When the filters are changed, the page will look up all the
+                    projects, and finds all the projects that satisfy the current filter selections. <br>
+                    <b> - Pagination</b><br>
+                    To prevent the projects from overcrowding the page with information, projects are separated in multiple
+                    pages. The page looks up all the projects that should be displayed with the current filters on, and puts
+                    them in an array. The page then uses that array to calculate which project should be displayed on the
+                    current page number. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project7Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Tenants
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Tenants is a 2D point and click game where players work as a security guard, and have
+                    to distinguish between real tenants of an apartment and their doppelgangers trying to get in. </p>
+                <p>In this game, players can decide whether they want to let a person go inside the apartment. The player
+                    can decide based on the person's appearance, items they bring, or by talking to them. The game will end if the
+                    player fails to figure out who the doppelganger is. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project8Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Idle Idling
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Idle Idling is a game where the player is supposed to stay in the game for as long as
+                    possible. The player will earn points as they are idle, and they can use the points to buy upgrades to
+                    help get more points.</p>
+                <p>In this game, the player gets points every second. Anytime, the player can prestige and use the points to
+                    buy upgrades. The upgrades can help the player gain more points by increasing points gain per second or by
+                    multiplying points gained. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project9Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Mogu Mogu
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Mogu Mogu is a 2D game that is based off of <i>Pacman</i>. Players can traverse
+                    through the map and collect as much pellets as possible while trying to avoid the ghost. </p>
+                <p>In this game, players can choose between which maps to play on, and try to clear the map by collecting the
+                    pellets. Players and ghost move through a pre-made grid map and chase each other. </p>
+                <p><b> - Grid</b><br>
+                    The map is made using a tilemap. Each tile is tagged with the index of its column and row position. The
+                    type of the tile is then determined by the tilemap and is then used by the player and the ghosts to
+                    calculate their movements. <br>
+                    <b> - Ghosts</b><br>
+                    To traverse through the map, the ghost moves with a semi-random direction. Everytime the ghost enters a
+                    new tile, it will figure out which direction it can go to by looking at the neighbouring tiles. Using the
+                    neighbouring tiles information, the ghost moves to a random neighbouring tile. The ghost cannot move
+                    towards the previous tile unless they hit a dead end. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project10Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Chatroom
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Chatroom is a project to showcase how two instances of the same program can do different
+                    things and communicate with each other. The programs can talk to each other and can even play rock paper
+                    scissors. </p>
+                <p>In this project, the same program can be set up as either a server or a client. Multiple clients can connect
+                    to the server, and communicate with each other through it. The clients can send messages and other clients can
+                    receive the messages to display on their side. They can also initiate a rock paper scissors game with another
+                    client and the server will handle the game, taking the clients' inputs and deciding which client won. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project11Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Pong
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Pong is my attempt to recreate the Pong game with additional features and implementations.
+                    In this project, I've added the ability to shoot projectiles to hinder enemies' movements, speed boosts
+                    to help players reach more distance in a short time, and a store for the players to purchase different
+                    paddles for them to use. </p>
+                <p>In this project, the game allows for both single and two player game. In single-player mode, an AI is made
+                    to play one of the paddles and to shoot projectiles towards the player. The player can choose between an
+                    easy, normal, and hard AI difficulty. </p>
+                <p><b> - Stuns & Boosts</b><br>
+                    The players and the AI can shoot projectiles at each other. If any of the paddles are hit by a projectile,
+                    the paddle is stunned for a set amount of time. To prevent the projectiles from being too overpowered,
+                    a boost system was implemented. The players or the AI can increase the speed of their paddle for a short
+                    amount of time. Boosting takes up energy and if the energy runs out, they have to wait until their energy
+                    is recharged. The energy of each paddle recharges over time. <br>
+                    <b> - AI</b><br>
+                    This game offers multiple difficulties of the AI. The difficulty changes the AI's movement calculation
+                    speed, targeting accuracy, and ability to use boosts. As the difficulty increases, the AI have increased
+                    calculation speed, increased accuracy, and more likely to use boosts. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project12Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Race
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <div class="acamlatedContainer">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6cXv34PjrfE?si=VO7MmG_fsxKibELv"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>Race is a project to compare Unreal Engine 5 and Unity from the development perspective.
+                    This project compares the ease of use of each engine, how each engine handles objects in the game, and
+                    to find my personal preference between the two. </p>
+                <p>In this project, I made a simple racing game in each of the engine. Both game would have a car the player
+                    can control and multiple checkpoints to guide the player through the racetrack. The checkpoints need to be
+                    able to be easily duplicated to and destroyed to increase and decrease the length of the racetrack. </p>
+                <p>The project achieves similar level of completeness in both engines. However, differences were
+                    found between the two engines. Unity doesn't have a racing game template therefore i have to implement my own
+                    car, taking up some development time. Unity uses a hierarchical system in their scene management which i prefer
+                    since i can get multiple objects that are a child of a parent object easily rather than referring to each object
+                    each time like in Unreal Engine. However, i found that the collision detection in Unreal engine is much more
+                    reliable than it is in Unity. I found myself not colliding with my checkpoints a lot in Unity. </p>
+                <p>In the end, i prefer Unity more than Unreal Engine. Its hierarchical scene management is a good enough
+                    trade off for me to choose it over Unreal Engine for now. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project13Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Typing
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Typing is a 2D game where players have to type out randomly generated words correctly.
+                    The words are set in a list and the players can use their keyboard to type out as fast as they can. If
+                    the player pressed a wrong key, the characters wouldn't show on the screen. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project14Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Deflect
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Deflect is a 2D bullet hell game where the player can only attack enemies with the
+                    enemy's own attacks by deflecting them. The players have to time their deflection or they will get damaged
+                    by the bullets they're trying to deflect. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project15Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Fall
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Fall is a 2D game where players have to fall while avoiding hitting obstacles in the way.
+                    Players fall at a constant rate and obstacles spawn randomly as they fall. If the player hits any of the
+                    obstacles, the player will lose and the game will be reset. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project16Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>The Train
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>The Train is a 2D mobile game where players have to use a train to traverse the map,
+                    defending and collecting survivors along the way in a post apocalyptic setting. The world has gone to an
+                    apocalypse and the only way to survive is by escaping from the planet with a rocket on the other side of
+                    the continent. Use the train to go to the rocket with as many survivors as possible. </p>
+                <p>This game was made as a group project with 3 other people. In this game, the player can buy and use
+                    weaponized carriages to defend themselves from the horde of zombies. As the game progresses, players can
+                    upgrade the carriages, to fit more survivors and to deal different kinds of attacks to the enemies. </p>
+                <p>The player can set different survivors to active duty to give the train different kind of buffs. The player
+                    can also choose between multiple connected stations to traverse through the map. Some paths are shorter while
+                    some are harder. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project17Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Space Invaders
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Space Invaders is a university project where I try to recreate the <i>Space Invaders</i>
+                    arcade game. In this game, a grid of enemies are spawned on the scene, and the player can shoot them down.
+                    The enemies move left and right in various ways, including moving in a sine wave. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project18Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Breakout
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Breakout is a university project where I try to recreate <i>Breakout</i> by Atari.
+                    In this project, the player can move the paddle around and try to bounce the ball to break the grid of
+                    bricks laid out in the scene. The players can also collect gems that are occasionally dropped to further
+                    increase their points. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project19Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Project: Escape
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Project: Escape is a 2D multiplayer game where one player is an escapee and has to
+                    hide and escape from the guard, and another player acts as a guard trying to catch the other player out
+                    in the grid maze map. </p>
+                <p>This project was part of a university group project where we developed a game based on the movie <i>Shutter
+                    Island</i>. We decided to make a multiplayer game where the players catch each other out, based on the premise
+                    of the movie where the main character is trying to escape from a facility. </p>
+                <p>In this project, I am in charge of developing the NPC AI, and some other systems. The NPCs in this game
+                    moves semi-randomly and the escapee would have to try to mimic their movement patterns to blend in with the NPCs
+                    and hide from the guard. The AI will detect when it reaches a new tile, and looks where it can move on that tile
+                    excluding backwards. If they can move in more than one direction they will pick a random direction. If they
+                    reached a dead end, they will then move backwards. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project20Modal" class="modal">
+        <div class="modalContent">
+            <div class="w3-container">
+                <div class="w3-bottombar">
+                    <h1>Budget Tracker Assistant
+                        <a onclick="closeProjectDetails(this.parentElement.parentElement.parentElement.parentElement.parentElement)"
+                           class="w3-padding" style="position:absolute; right: 10px; top: 5px"><i class="fa fa-remove hoverScale"></i>
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="w3-container" style="margin-top: 10px">
+                <p>Budget Tracker Assistant is a personal project of mine where i make a program to reduce
+                    the repetitiveness of my budget tracking activity. Everytime I spend money on something, I note it down
+                    on a <i>Google Sheets</i> document. This helps me analyse my spending which helps me better plan my future
+                    spending. This project is made to reduce the time doing my budget tracking by automating some of the repetitive
+                    parts. </p>
+                <p>Made using <i>Google's AppScript</i>, this project automates two tasks, creating a new sheet each month,
+                    and to check calendar events. If the program fails to execute any of the tasks, it will email me, notifying
+                    me of the problem. </p>
+                <p><b> - New Sheet</b><br>
+                    On the first day of each month, the program will create a new sheet for me to track my budgets. The program
+                    will duplicate a template, name it using the month and year, and place it in the correct sorting order. The
+                    program will then fill out the new sheet with the appropriate data taken from the previous month's sheet. <br>
+                    <b> - Subscriptions</b><br>
+                    As I subscribed to multiple services, I have to track the subscriptions' payment at the same time each month.
+                    To automate this, I note my subscriptions on my <i>Google Calendar</i>. Everyday, the program looks up my
+                    calendar and checks if there is an event which name has a specific format. If there is, the program will
+                    take the data from the calendar, and try to put it in the current month's sheet. The program will look up
+                    for an empty row in the sheet, and put all the data on the empty row. <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="overlay" onclick="closeEverything()" style="cursor:pointer" id="overlay"></div>
+
+</body>
+</html>
