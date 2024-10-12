@@ -1,0 +1,328 @@
+.acamlatedContainer
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+    overflow: hidden;
+}
+
+.acamlatedContainer iframe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.salmonOrange
+{
+    color: salmon;
+}
+
+.salmonOrangeBackground
+{
+    color: white;
+    background-color: salmon;
+}
+
+.hoverScale:hover
+{
+    scale: 150%;
+}
+
+.acamlatedMarginLeft
+{
+    margin-left: 16px;
+}
+
+.acamlatedMarginRight
+{
+    margin-right: 16px;
+}
+
+.acamlatedMarginTop
+{
+    margin-top: 16px;
+}
+
+.acamlatedMarginBottom
+{
+    margin-bottom: 16px;
+}
+
+.acamlatedScaleImg
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 10 / 16 * 100 */
+    overflow: hidden;
+}
+
+.acamlatedScaleImg img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills container and cuts excess */
+}
+
+.acamlatedPortraitImg
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+}
+
+.acamlatedPortraitImg img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.animateInFromLeft
+{
+    position:relative;
+    animation:animateInLeft 0.3s
+}
+
+@keyframes animateInLeft
+{
+    from{left:-300px;opacity:0} to{left:0;opacity:1}
+}
+
+.animateOutToLeft
+{
+    position:relative;
+    animation:animateOutLeft 0.3s
+}
+
+@keyframes animateOutLeft
+{
+    from{left:0;opacity:1} to{left:-300px;opacity:0}
+}
+
+.modal
+{
+    z-index:4;
+    display:none;
+    padding-top:70px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+}
+
+.modalContent
+{
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:0;
+    outline:0;
+    width:900px
+}
+
+.modalContent p
+{
+    text-align: justify;
+}
+
+@media (max-width:993px)
+{
+    .modalContent{margin:0 10px;width:auto!important}
+    .modal{padding-top:95px;}
+}
+
+.animateZoomIn
+{
+    animation:zoomIn 0.3s
+}
+
+@keyframes zoomIn
+{
+    from{transform:scale(0)} to{transform:scale(1)}
+}
+
+.animateZoomOut
+{
+    animation:zoomOut 0.3s
+}
+
+@keyframes zoomOut
+{
+    from{transform:scale(1)} to{transform:scale(0)}
+}
+
+.overlay
+{
+    position:fixed;
+    display:none;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:2
+}
+
+.animateOpacityIn
+{
+    animation:opacityIn 0.3s
+}
+
+@keyframes opacityIn
+{
+    from{opacity:0} to{opacity:1}
+}
+
+.animateOpacityOut
+{
+    animation:opacityOut 0.3s
+}
+
+@keyframes opacityOut
+{
+    from{opacity:1} to{opacity:0}
+}
+
+.shortText
+{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    text-align: justify;
+}
+
+.shortTextBox
+{
+
+}
+
+.coverImage
+{
+
+}
+
+.coverImage img
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: filter 0.3s ease-in-out;
+    filter: blur(5px);
+}
+
+.coverImage:hover img
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: filter 0.3s ease-in-out;
+    filter: blur(0);
+}
+
+.coverImage span
+{
+    transition: top 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white; /* Adjust the color as needed */
+}
+
+.acamlatedScaleImg:hover span
+{
+    transition: top 0.3s ease-in-out;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white; /* Adjust the color as needed */
+}
+
+.buttonContainer
+{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.justify
+{
+    text-align: justify;
+}
+
+.shadow
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.roundButton
+{
+    border-radius: 30px
+}
+
+.steamContainer
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.steamContainer iframe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.steam
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.shadowText
+{
+    text-shadow: 2px 2px 2px black;
+}
+
+.hoverShadow:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.grayButton
+{
+    color: white;
+    background-color: gray;
+}
